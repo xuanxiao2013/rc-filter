@@ -89,7 +89,10 @@ class Filters extends React.Component {
 	}
 
 	DelButtonOnclick(indexFilter) {
-		if(this.props.isAndAndOr){
+		const {and, or} = this.props;
+		let relation = (this.state.filters[indexFilter] || {}).relation;
+
+		if(this.props.isAndAndOr && and === relation){
 			// 删除当前 和 知道下一个 and 之间的 or
 			let delCounts = this._getNextAndIndex(indexFilter) - indexFilter;
 			this.state.filters.splice(indexFilter, delCounts);
@@ -135,7 +138,7 @@ class Filters extends React.Component {
 		let me = this;
 		const {props, state} = this;
 		const {isAndAndOr, propertyList, valueInputList, typeMap, containerWidth,
-			and, or,
+			and, or, firstRelationTxt,
 			relationRadioStyle, timeFormat} = props;
 		let {relationWidth} = props;
 
@@ -154,6 +157,7 @@ class Filters extends React.Component {
 
 				and={and}
 				or={or}
+				firstRelationTxt={firstRelationTxt}
 				relationRadioStyle={relationRadioStyle}
 				timeFormat={timeFormat}
 
@@ -175,7 +179,7 @@ class Filters extends React.Component {
 		});
 
 		if($filters.length === 0){
-			$filters = <Button onClick={this.filterStartOnClick.bind(this)}>事件筛选条件</Button>
+			$filters = <Button onClick={this.filterStartOnClick.bind(this)}>添加筛选条件</Button>
 		}
 
 		const rootCls = {
@@ -197,16 +201,17 @@ Filters.propTypes = {
 	propertyList: PropTypes.func.isRequired,
 	typeMap: PropTypes.any.isRequired,
 	valueInputList: PropTypes.func
-}
+};
 
 Filters.defaultProps = {
 	isAndAndOr: 1,
 	containerWidth: 950,
 	relationWidth: 50,
-	and: '并且',
-	or: '或者',
+	firstRelationTxt: '筛选',
+	and: 'and',
+	or: 'or',
 	timeFormat: 'yyyy-MM-dd HH:mm:ss',
-	relationRadioStyle: {width:35, padding: '0 4px', fontSize: 12}
+	relationRadioStyle: {width:40, padding: '0 4px', fontSize: 12}
 };
 
 export default Filters;

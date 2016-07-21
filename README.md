@@ -15,3 +15,4 @@
 |or | 操作符 | String | 或者 |
 |timeFormat | 时间格式 | String | yyyy-MM-dd HH:mm:ss |
 |relationRadioStyle | 并且或者区域的样式 | Object |  |
+|firstRelationTxt | 第一个并且或者区域的文字 | String | 筛选 |

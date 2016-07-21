@@ -201,7 +201,7 @@ class DemoAnimate extends React.Component {
         />
       <Filters
         isAndAndOr={false}
-        relationWidth={108}
+        relationWidth={116}
         propertyList={propertyList}
         valueInputList={valueInputList}
         typeMap={TypeMap}

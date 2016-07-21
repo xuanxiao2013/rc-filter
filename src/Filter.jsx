@@ -51,7 +51,7 @@ class Filter extends React.Component {
 	}
 
 	getRelation(style){
-		let {filterIndex, relation, isAndAndOr, and, or, relationRadioStyle} = this.props;
+		let {filterIndex, relation, isAndAndOr, and, or, firstRelationTxt, relationRadioStyle} = this.props;
 		let $relation;
 
 		function onChange(e){
@@ -59,9 +59,8 @@ class Filter extends React.Component {
 		}
 
 		if(isAndAndOr){
-			$relation = relation;;
+			$relation = filterIndex === 0 ? firstRelationTxt : relation;
 		}else{
-
 
 			$relation = (<RadioGroup onChange={onChange.bind(this)} value={relation}>
 				<RadioButton style={relationRadioStyle} value={and}>{and}</RadioButton>
@@ -141,17 +140,11 @@ class Filter extends React.Component {
 			relationSpanStyle = {width: relationWidth},
 			formItemWarpStyle = {width: containerWidth - 290};
 
-		filterFormStyle.borderLeft = `${relationWidth}px solid #dee2e9`;
-		relationSpanStyle.marginLeft = - relationWidth - 10;
-
-		if(isAndAndOr){
-
-			if(relation === or){
-				warpFormStyle.marginLeft = (relationWidth / 2);
-				filterFormStyle.marginLeft = (relationWidth / 2);
-				filterFormStyle.width = containerWidth - relationWidth;
-				formItemWarpStyle.width = formItemWarpStyle.width - relationWidth;
-			}
+		if(isAndAndOr && relation === or){
+			warpFormStyle.marginLeft = (relationWidth / 2);
+			filterFormStyle.marginLeft = (relationWidth / 2);
+			filterFormStyle.width = containerWidth - relationWidth;
+			formItemWarpStyle.width = formItemWarpStyle.width - relationWidth;
 		}
 
 
