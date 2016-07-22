@@ -40,6 +40,8 @@
     "webpack-dev-server": "^1.14.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.10.0"
+
+
   },
   "bugs": {
     "url": "https://github.com/xuanxiao2013/rc-filter/issues"

@@ -84,7 +84,7 @@ class Filter extends React.Component {
 			onPropertyChange, onTypeChange, onOperateChange, onValueInputChange,
 			propertyList, valueInputList, typeMap
 			} = props;
-		let $property, $types, $operate, $valueInput, $addBtn, $andBtn, $orBtn, $delBtn, $btns;
+		let $property, $types, $operate, $valueInput;
 
 		$property =<PropertySelect
 			and={and}

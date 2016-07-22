@@ -11,11 +11,15 @@ class Filters extends React.Component {
 
 	constructor(props, context) {
 		super(props, context);
-		this.state = {
-			filters:[],
-			// 只有在  isAndAndOr 为 false  使用
-			relation: props.and
+		const state = {};
+		if(props.isAndAndOr){
+			state.filters = props.filters || [];
+		}else{
+			let filters = props.filters || {};
+			state.filters = filters.filters || [];
+			state.relation = filters.relation || props.and;
 		}
+		this.state = state;
 	}
 
 	emptyFilterStructure(){
@@ -54,7 +58,7 @@ class Filters extends React.Component {
 	}
 
 	componentDidMount(){
-		this.setState({filters: [this.emptyFilterStructure()]});
+		//this.setState({filters: [this.emptyFilterStructure()]});
 	}
 
 	_getNextAndIndex(activeIndex){
@@ -129,7 +133,7 @@ class Filters extends React.Component {
 	}
 
 	onValueInputChange(filterIndex, valueInput){
-		this.state.filters[filterIndex].valueInput = valueInput;
+		this.state.filters[filterIndex].valueInput.value = valueInput;
 		this.setState(this.state);
 		this.onChangeValueInput();
 	}
@@ -154,6 +158,7 @@ class Filters extends React.Component {
 				property={o.property}
 				type={o.type}
 				operate={o.operate}
+				valueInput={o.valueInput}
 
 				and={and}
 				or={or}
@@ -196,14 +201,15 @@ class Filters extends React.Component {
 }
 
 Filters.propTypes = {
+	filters:PropTypes.array,
 	onChangeValueInput: PropTypes.func.isRequired,
-	getJsonQueryData: PropTypes.func,
 	propertyList: PropTypes.func.isRequired,
 	typeMap: PropTypes.any.isRequired,
 	valueInputList: PropTypes.func
 };
 
 Filters.defaultProps = {
+	filters: [],
 	isAndAndOr: 1,
 	containerWidth: 950,
 	relationWidth: 50,
