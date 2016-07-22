@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import Filters from '../src/index.jsx';
-
 
 import {
   EMPTY_VALUR_FILTER,

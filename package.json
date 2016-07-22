@@ -10,9 +10,15 @@
     "es6"
   ],
   "scripts": {
-    "start": "webpack --watch"
+    "dev": "webpack-dev-server"
   },
   "dependencies": {
+    "react": "0.14.7",
+    "react-dom": "0.14.7",
+    "classnames": "2.x",
+    "antd": "^1.1.0"
+  },
+  "devDependencies": {
     "babel": "6.5.2",
     "babel-core": "6.6.5",
     "babel-eslint": "5.0.0",
@@ -25,18 +31,15 @@
     "eslint-loader": "1.0.0",
     "eslint-plugin-react": "3.4.1",
 
-    "react": "0.14.7",
-    "react-dom": "0.14.7",
-    "webpack": "1.12.2",
-
     "style-loader": "^0.13.0",
-    "url-loader": "^0.5.6",
     "css-loader": "^0.23.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
 
-    "classnames": "2.x",
-    "antd": "^1.1.0"
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.10.0"
   },
   "bugs": {
     "url": "https://github.com/xuanxiao2013/rc-filter/issues"
