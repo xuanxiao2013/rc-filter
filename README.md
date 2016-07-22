@@ -1,15 +1,28 @@
 # react-filter
 
-## 效果预览
+## React Filter for npm 
+
+[![NPM version][npm-image]][npm-url]
+[![npm download][download-image]][download-url]
+
+[npm-image]: http://img.shields.io/npm/v/rc-filter.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/rc-filter
+[download-image]: https://img.shields.io/npm/dm/rc-filter.svg?style=flat-square
+[download-url]: https://npmjs.org/package/rc-filter
+
+
+## Screenshots
 <img src="./doc/filter-demo.png" />
 
-## 安装流程
+## install
+[![rc-filter](https://nodei.co/npm/rc-filter.png)](https://npmjs.org/package/rc-filter)
 
+## devd
 ``` bash
 # 安装依赖
 npm i --registry=https://registry.npm.taobao.org
 
-# 启动 dev server:
+# 启动服务
 # http://localhost:12345 (需手动更新)
 # http://localhost:12345/webpack-dev-server/ (可自动更新)
 
