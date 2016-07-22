@@ -17,7 +17,7 @@
 ## install
 [![rc-filter](https://nodei.co/npm/rc-filter.png)](https://npmjs.org/package/rc-filter)
 
-## devd
+## dev
 ``` bash
 # 安装依赖
 npm i --registry=https://registry.npm.taobao.org
