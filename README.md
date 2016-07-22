@@ -1,7 +1,7 @@
 # react-filter
 
 ## 效果预览
-<img src="./doc/filter.demo.png" />
+<img src="./doc/filter-demo.png" />
 
 ## 安装流程
 
