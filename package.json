@@ -9,15 +9,20 @@
     "babel",
     "es6"
   ],
-  "main": "./dist/index.js",
+  "main": "./lib/index.js",
+  "files": [
+    "assets/*.css",
+    "lib"
+  ],
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "rm -fr ./dist;NODE_ENV=production webpack -p --progress --colors"
+    "build": "webpack "
   },
   "dependencies": {
     "react": "0.14.7",
     "react-dom": "0.14.7",
     "classnames": "2.x",
+    "rc-filter": "^0.1.1",
     "antd": "^1.1.0"
   },
   "devDependencies": {
@@ -37,6 +42,8 @@
     "css-loader": "^0.23.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+
+    "rc-tools": "5.x",
 
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1",

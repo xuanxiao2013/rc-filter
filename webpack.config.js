@@ -1,10 +1,10 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: {
-		//demo: './examples/demo.js',
-		index: './src/index.jsx'
+		index: './examples/demo.js'
 	},
 	output: {
 		path: './dist/',
@@ -34,7 +34,7 @@ module.exports = {
 	},
 
 	devServer: {
-		contentBase: './examples/',
+		contentBase: './dist/',
 		historyApiFallback: true,
 		hot: true,
 		inline: true,
@@ -44,8 +44,17 @@ module.exports = {
 		port: 12345
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin()
+		new webpack.HotModuleReplacementPlugin()
+		,new webpack.NoErrorsPlugin()
+		,new HtmlWebpackPlugin({
+			template: './examples/index.html',
+			hash: true,
+			filename: 'index.html',
+			inject: 'body',
+			minify: {
+				collapseWhitespace: false
+			}
+		})
 	],
 	stats: {
 		colors: true
