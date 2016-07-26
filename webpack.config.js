@@ -2,13 +2,13 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-	entry: [
-		'babel-polyfill',
-		'./examples/demo.js'
-	],
+	entry: {
+		//demo: './examples/demo.js',
+		index: './src/index.jsx'
+	},
 	output: {
-		path: __dirname,
-		filename: './dist/bundle.js'
+		path: './dist/',
+		filename: '[name].js'
 	},
 	module: {
 		loaders: [
